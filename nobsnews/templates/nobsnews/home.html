@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>noBSnews</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h2>no<span>BS</span>news</h2>
+        </div>
+
+        <div class="account_container">
+            <button class="signup_btn">Signup</button>
+        </div>
+    </header>
+
+    <section class="main_content_container">
+        <div class="left_navbar">
+            <ul class="navbar">
+                <li><a href="{% url 'home' %}">Home</a></li>
+            </ul>
+        </div>
+        <div class="actual_content">
+            <div class="articles_container">
+                {% for x in articles %}
+                    <div class="article">
+                        <div class="img_container">
+                            <img src="{{x.header_img.url}}" alt="this is the image" class="img">
+                        </div>
+                        <div class="content_container">
+                            <h2>{{x.title}}</h2>
+                            <small>By {{x.author}}</small>
+                            <p>
+                                {{x.snippet}}
+                            </p>
+                            <button class="read_more"><a href="{% url 'article_detail' x.id %}">Read More</a></button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        This is still the footer for now
+    </footer>
+</body>
+</html>

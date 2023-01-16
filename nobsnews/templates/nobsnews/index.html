@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>noBSnews</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h2>noBSnews</h2>
+        </div>
+
+        <ul class="navbar">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Signup</a></li>
+        </ul>
+    </header>
+
+    <section class="hero_container">
+        <div class="container">
+            <h1>Welcome to noBSnews</h1>
+            <p>
+                The one news platform that gives you the news you never knew you knew
+                but with non of that BS.
+            </p>
+            <button><a href="{% url 'home' %}">Check it out here</a></button>
+        </div>
+    </section>
+
+    <section class="topic_container">
+        <h2>Topics we cover here on this platform</h2>
+
+        <div class="box_container">
+            <div class="box"><a href="{% url 'home' %}">Anime</a></div>
+            <div class="box"><a href="{% url 'not_ready' %}">Comics</a></div>
+            <div class="box"><a href="{% url 'not_ready' %}">Movies and TV shows</a></div>
+        </div>
+    </section>
+</body>
+</html>

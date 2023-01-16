@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>noBSnews</title>
+    <link rel="stylesheet" href="{% static 'css/article-detail.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h2>no<span>BS</span>news</h2>
+        </div>
+    </header>
+    <section class="main_content_container">
+        <div class="left_navbar">
+            <ul class="navbar">
+                <li><a href="{% url 'home' %}">Home</a></li>
+            </ul>
+        </div>
+        <div class="actual_article">
+            <div class="img-container">
+                <img src="{{article.header_img.url}}" alt="this is the header image" class="img">
+            </div>
+            <div class="content_container">
+                <h2>{{article.title}}</h2>
+                <small>By {{article.author}}</small> <small>{{article.date_posted}}</small>
+                <p>{{article.body|safe}}</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>This is the footer for now</footer>
+</body>
+</html>
